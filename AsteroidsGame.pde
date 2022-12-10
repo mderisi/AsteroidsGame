@@ -48,7 +48,7 @@ public void draw()
       if(d < 30){
          AsteroidList.remove(i);
          shots.remove(n);
-         break;
+         
       }
      }
     // Limited shots to 50 frames of animation
