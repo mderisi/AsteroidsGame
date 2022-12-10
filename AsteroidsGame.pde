@@ -39,7 +39,6 @@ public void draw()
   for(int n = 0; n < shots.size(); n++){
     shots.get(n).move();
     shots.get(n).show();
-    System.out.println("s: " + shots.size());
     Bullet shot = shots.get(n);
     
     for(int i = 0; i < AsteroidList.size(); i++){
