@@ -1,6 +1,6 @@
 class Asteroid extends Floater{
   private double rotSpeed = (Math.random()*14)-7;
-  private int myScaling = 3;  
+  private int myScaling = 2;  
   //private double mythrust = 0.1;
   
   public Asteroid(){
