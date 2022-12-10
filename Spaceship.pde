@@ -2,6 +2,7 @@ class Spaceship extends Floater {
   private int myrotationspeed = 10;
   private int mylastframe = 0;
   private double mythrust = 0.1;
+  private int lastshotframe = 0;
   
   public Spaceship(){
     corners = 4;
@@ -13,12 +14,8 @@ class Spaceship extends Floater {
     myPointDirection = 0;
     myXspeed = 0;
     myYspeed = 0;
- 
- 
-
+    
   }
-  
-  
   
   public void keyPressed(){
     if (key == 'b'){
@@ -28,6 +25,13 @@ class Spaceship extends Floater {
     if ((key == 'h') && (keyPressed)) {
       hyperspace();
     }
+    
+    if ((key == ' ') && (keyPressed) && ( (numframes- lastshotframe) > 10)  ){
+      shots.add(new Bullet(bob));
+      lastshotframe = numframes;
+      
+    }
+    
    if(key == CODED){
     
     if((keyCode == LEFT) && (keyPressed)){
@@ -52,12 +56,11 @@ class Spaceship extends Floater {
          turn(Math.random()*360);
          }
          mylastframe = frameCount;
-  }
- 
-  
+  } 
+  public double getX(){return myCenterX;}
+  public double getY(){return myCenterY;}
+  public double getPointDirection(){return myPointDirection;}
+  //getters for speed
+  public double getXspeed(){return myXspeed;}
+  public double getYspeed(){return myYspeed;}
 }
-
-
-
-
-
